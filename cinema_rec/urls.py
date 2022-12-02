@@ -9,6 +9,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from movie.views import MovieViewSet, GenreViewSet
+
 # from category.views  import CategoryViewSet
 # from crud.views  import PersonViewSet
 # from shop.views  import ShopViewSet
@@ -29,7 +31,9 @@ schema_view = get_schema_view(
    permission_classes=[permissions.AllowAny],
 )
 
-router = SimpleRouter()
+# router = SimpleRouter()
+# router.register('movie', MovieViewSet)
+# router.register('genres', GenreViewSet)
 
 urlpatterns = [
    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
@@ -39,7 +43,7 @@ urlpatterns = [
 #    path('person/', include('crud.urls')),
    path('admin/', admin.site.urls),
    path('accounts/', include('account.urls')),
-#    path('category/', include('category.urls')),
+   path('movies/', include('movie.urls')),
 #    path('shop/', include('shop.urls')),
 ]
 
