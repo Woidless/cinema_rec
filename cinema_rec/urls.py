@@ -44,7 +44,7 @@ urlpatterns = [
    path('admin/', admin.site.urls),
    path('accounts/', include('account.urls')),
    path('movies/', include('movie.urls')),
-#    path('shop/', include('shop.urls')),
+   path('reviews/', include('rating.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
