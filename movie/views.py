@@ -56,3 +56,4 @@ class MovieViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(owner=request.user, movie=movie)
         return response.Response(serializer.data, status=201)
+
