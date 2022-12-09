@@ -26,9 +26,9 @@ class MovieViewSet(ModelViewSet):
     queryset = Movie.objects.all()
     # pagination_class = StandartResultPagination
     filter_backends = (SearchFilter,)
-    search_fields = ('title', )
+    search_fields = ('title', 'tags')
     filter_backends = (SearchFilter, DjangoFilterBackend)
-    filterset_fields = ('owner', 'genre')
+    filterset_fields = ('tags', 'genre', 'year')
 
     def get_serializer_class(self):
         if self.action == 'list':

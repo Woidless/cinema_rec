@@ -21,10 +21,12 @@ class Movie(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products', null=True)
     title = models.CharField(max_length=100)
     genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, related_name='categories', null=True)
+    year = models.SmallIntegerField(default=0000)
     image = models.ImageField(upload_to='images')
     runtime = models.SmallIntegerField()
     actors = models.CharField(max_length=255, null=True)
     description = models.TextField(null=True)
+    tags = models.CharField(max_length=255, null=True)
     link = models.CharField(max_length=255)
 
     def __str__(self):
