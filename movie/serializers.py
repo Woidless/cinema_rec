@@ -11,12 +11,11 @@ class GenreSerializer(serializers.ModelSerializer):
 
 
 class MovieListSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.email')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Movie
-        fields = ('owner', 'title', 'image')
-
+        fields = ('owner', 'title', 'image', 'tags', 'year')
 
 
 class MovieDetailSerializer(serializers.ModelSerializer):

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # my_apps
     'account',
     'movie',
+    'rating',
     
 ]
 
@@ -136,6 +137,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://34.28.220.66',
     'http://34.133.205.247',
+    'http://34.28.76.144',
     # 'http://34.133.205.247',
 ]
 
